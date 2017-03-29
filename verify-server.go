@@ -100,14 +100,6 @@ func checkSumHandler(w http.ResponseWriter, r *http.Request) {
     }
     defer file.Close()
 
-    // add for test, 2017-03-28
-    // scanner := bufio.NewScanner(file)
-    // for scanner.Scan() {
-    //     log.Println(scanner.Text())
-    // }
-
-    // test end.
-
     data := make([]byte, MaxFileSize)
     count, err := file.Read(data)
     if err != nil {
